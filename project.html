@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <script src="https://kit.fontawesome.com/ac6ee84b93.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: white;
+            position: sticky;
+            top: 0px ;
+            padding: 6px;
+            box-shadow: 0px 0px 25px 0 black;
+            z-index: 5;
+        }
+        .left,.right{
+            font-size: 10px;
+            margin: 10px; 
+        }
+        .nav div {
+            position: relative;
+            
+        }
+        
+        .left > a , .right > a{
+            text-decoration: none;
+            font-size: 2em; /* (2 * 12) =24px */
+            letter-spacing: 3px;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px;
+        }
+        .left > a:hover, .right > a:hover{
+            text-decoration: underline;
+            text-decoration-color: #34efdf;
+            text-decoration-thickness: 5px;
+            color: darkgoldenrod;
+            transform: translateX(-50%);
+            font-weight: bold;
+            opacity: 0.8;
+            transition: all 0.4s ease;
+            border-radius: 20px;
+        }
+        .image{
+            width: 100%; 
+        }
+        .img-1{
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 2px 2px 14px black;
+            transition: 1s;
+        }
+        .text{
+            font-size: 2em;
+            font-family:Arial, Helvetica, sans-serif;
+            color: white;
+            position: absolute;
+            top: 60vh;
+            left: 40vw;
+            letter-spacing: 5px;
+        }    
+        .project-section{
+            /* margin: 25px; */
+            background-color: #ddf7f4;
+           
+        }
+        .about-section{
+            background-color: rgb(243, 230, 242);
+            
+        }
+        .contact-section{
+            background-color: rgb(34, 33, 33);
+            position: relative;
+            height: 1200px;
+        }
+        .footer-section{
+            background-color: darkcyan;
+            height: 170px;
+            position: relative;
+            align-items: center;
+        }
+        .margin-project > p, .margin-project >.about-name{
+            font-size: 32px;
+            padding-top: 15px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .contact-name{
+            font-size: 32px;
+            color: white;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding-top: 20px;
+            padding-left: 30px;
+        }
+
+        .project-img-1{
+            /* display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-bottom: 10px;
+            position: relative; */
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: 220px;
+            position: relative;
+            
+        }
+        
+        #para-name,#para-name-1,#para-name-2,#para-name-3{
+            position: absolute;
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            border-top-left-radius: 10px;
+        }
+        #para-name{  
+            left: 0px;   
+        }
+        #para-name-1{
+            left: 330px;   
+        }
+        #para-name-2{
+            right: 565px;   
+        }
+        #para-name-3{
+            right: 226px;
+        }
+        .img-1:hover{
+            transform: scale(1.2,1.3);
+            z-index: 2;
+            width: 300px;
+        }
+        
+        #para-2{
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(49, 46, 46);
+            text-align: justify;
+            padding-bottom: 40px;
+        }
+        .margin-project{
+            margin-left: 25px;
+        }
+        .con-2{
+            background-color: white;
+            width: 320px;
+            text-align: center;
+            padding-top: 10px;
+            box-shadow: 1px 1px 8px black;
+        }
+        .image-2-align{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .left-align-text{
+            text-align: left;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-right: 20px;
+            box-shadow: 0px 1px 8px black;
+        }
+        .p-name{
+            font-size: 26px;
+            color: rgb(34, 33, 33);
+            padding: 10px;
+        }
+        .p-job{
+            font-size: 16px;
+            padding: 10px;
+            color: lightslategray;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .p-para{
+            font-size: 16px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: left;
+            padding: 10px;
+        }
+        .p-contact{
+            background-color: #e2e4e3;
+            text-align: center;
+            height: 30px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            font-size: 20px;
+            padding: 10px;
+        }
+        #c-id{
+           /* transform: translate(-10%, -50%); */
+           transition: all 0.5s linear;
+           position: relative;
+        }
+        .p-contact:hover{
+            background-image: linear-gradient(90deg,rgba(131, 58, 180,1) ,rgba(213, 139, 139,1) , rgba(252,176,69,1) );
+            color: #fff;
+            
+        }
+        /* .con-2 img{
+            box-shadow: 1px 1px 8px black;
+        } */
+        .contact-part-1{
+            position: absolute;
+            top: 120px;
+            left: 300px;
+            z-index: 2;
+         }
+        .box-1{
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+            padding-top: 30px;
+            height: 150px;
+            width: 140px;
+        }
+        .box-2{
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+            padding-top: 10px;
+            height: 130px;
+            width: 140px;
+        }
+        .box-1 h5, .box-2 h5{
+            font-weight: 500px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .box-1 p, .box-2 p{
+            font-size: 12px;
+            font-family:fantasy;
+        }
+        .contact-part-2{
+            background-color: lightblue;
+            width: 600px;
+            height: 450px;
+            position: absolute;
+            right: 150px;
+            top: 80px;
+            text-align: center;
+            
+        }
+        .contact-part-2 h2{
+            font-size: 2em;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-shadow: 2px 2px 8px rgb(221, 123, 123);
+            margin-bottom: 30px;
+            /* padding-bottom: 20px; */
+            margin-top: 40px;
+        }
+        .contact-part-2 #input-1,.contact-part-2 #input-2{
+            width: 300px;
+            height: 40px;
+            padding-left: 10px;
+            margin-bottom: 30px;
+        }
+        .contact-part-2 #input-1::placeholder, .contact-part-2 #input-2::placeholder{
+            font-size: 16px;
+        }
+        .contact-part-2 #input-3{
+            width: 80px;
+            height: 30px;
+            margin-top: 20px;
+            color: darkblue;
+            font-size: 18px;
+            font-weight: 600;
+            background-color: transparent;
+            position: absolute;
+            left: 45%;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+        .contact-part-2 #input-3:hover{
+            background-color: black;
+            color: white;
+            border: 0px;
+        }
+        .map-image{
+            position: absolute;
+            top: 600px;
+            margin-left: 20px;
+            margin-right: 20px;
+            
+        }
+        .map-image img{
+            width: 1000px;
+            margin-left: 150px;
+        }
+        .icons, .refer ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 40px;
+        }
+        .icons i{
+            background-color: black;
+            padding: 10px;
+            font-size: 25px;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+        .unorder li{
+            margin-right: 25px;
+            font-size: 22px;
+        }
+        .copyright{
+            background-color: black;
+            color: white;
+            height: 50px;
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <nav> -->
+        <div class="nav">
+            <div class="left">
+                <a href="#"><span style="font-weight: 600;">BR&ensp;</span>Architects</a>
+            </div>
+            <div class="right">
+                <a href="#project-id">Projects</a>
+                <a href="#about-id">About</a>
+                <a href="#contact-id">Contact</a>
+            </div>
+        </div>
+    <!-- </nav> -->
+     <div>
+        <img src="https://www.w3schools.com/w3images/architect.jpg" alt="" class="image">
+        <p class="text"><span style="background-color: black;opacity: 0.75;padding: 10px;">BR</span>&ensp;Architects</p>
+     </div>
+     <!--Projects section-->
+     <div class="project-section" id="project-id">
+        <div class="margin-project">
+            <p class="project-name">Projects</p><br><hr><br>
+            <div class="project-img-1">
+                <!-- <div> -->
+                <img src="https://www.w3schools.com/w3images/house5.jpg" alt="" width="300px" class="img-1">
+                <p id="para-name">Summer Home</p>
+                <!-- </div> -->
+                <img src="https://www.w3schools.com/w3images/house2.jpg" alt="" width="300px" class="img-1">
+                <p id="para-name-1">Brick House</p>
+                <img src="https://www.w3schools.com/w3images/house3.jpg" alt="" width="300px" class="img-1">
+                <p id="para-name-2">Renovated</p>
+                <img src="https://www.w3schools.com/w3images/house4.jpg" alt="" width="300px" class="img-1">
+                <p id="para-name-3">Barn House</p>
+            </div><br>
+            
+            <div class="project-img-1">
+                <img src="https://www.w3schools.com/w3images/house2.jpg" alt="" width="300px" class="img-1">
+                <p id="para-name">Summer Home</p>
+                <img src="https://www.w3schools.com/w3images/house5.jpg" alt="" width="300px" class="img-1">
+                <p id="para-name-1">Brick House</p>
+                <img src="https://www.w3schools.com/w3images/house4.jpg" alt="" width="300px" class="img-1">
+                <p id="para-name-2">Renovated</p>
+                <img src="https://www.w3schools.com/w3images/house3.jpg" alt="" width="300px" class="img-1">
+                <p id="para-name-3">Barn House</p>
+            </div>
+        </div>
+     </div>
+     <!--About Section-->
+     <div class="about-section" id="about-id">
+        <div class="margin-project">
+            <p class="about-name">About</p><br><hr><br>
+            <p id="para-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt
+                in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do 
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="image-2-align">
+                <div class="con-2">
+                    <img src="https://www.w3schools.com/w3images/team2.jpg" alt="" width="300px">
+                    <div class="left-align-text">
+                        <p class="p-name">John Doe</p>
+                        <p class="p-job">CEO & Founder</p>
+                        <p class="p-para">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                        <p class="p-contact" id="c-id">Contact</p>
+                    </div>
+                </div>
+                <div class="con-2">
+                    <img src="https://www.w3schools.com/w3images/team1.jpg" alt="" width="300px">
+                    <div class="left-align-text">
+                        <p class="p-name">John Doe</p>
+                        <p class="p-job">Architect</p>
+                        <p class="p-para">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                        <p class="p-contact" id="c-id">Contact</p>
+                    </div>
+                </div>
+                <div class="con-2">
+                    <img src="https://www.w3schools.com/w3images/team3.jpg" alt="" width="300px">
+                    <div class="left-align-text">
+                        <p class="p-name">Mike Ross</p>
+                        <p class="p-job">Architect</p>
+                        <p class="p-para">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                        <p class="p-contact" id="c-id">Contact</p>
+                    </div>
+                </div>
+                <div class="con-2">
+                    <img src="https://www.w3schools.com/w3images/team4.jpg" alt="" width="300px">
+                    <div class="left-align-text">
+                        <p class="p-name">Dan Star</p>
+                        <p class="p-job">Architect</p>
+                        <p class="p-para">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                        <p class="p-contact" id="c-id">Contact</p>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+     </div>
+     <!--Contact Section-->
+    <div class="contact-section" id="contact-id">
+        <p class="contact-name">Contact</p><hr>
+        <div class="contact-part-1">
+            <table  cellpadding="6px">
+                <tr>
+                    <td>
+                        <div class="box-1">
+                            <span><i class="fa-solid fa-location-dot" style="color: #74C0FC;"></i></span>
+                            <h5>OUR MAIN OFFICE</h5>
+                            <p>SoHo 94 Broadway St New York, NY 1001</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-1">
+                            <span><i class="fa-solid fa-phone" style="color: #74C0FC;"></i></span>
+                            <h5>PHONE NUMBER</h5>
+                            <p>234-5678-8457 888-0123-456(Toll Free)</p>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="box-2">
+                            <span><i class="fa-solid fa-fax" style="color: #74C0FC;"></i></span>
+                            <h5>FAX</h5>
+                            <p>1-234-567-8900</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-2">
+                            <span><i class="fa-solid fa-envelope" style="color: #74C0FC;"></i></span>
+                            <h5>EMAIL</h5>
+                            <p>hello@theme.com</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="contact-part-2">
+            <h2>Contact us</h2>
+            <input id="input-1" type="text" placeholder="Enter your name"><br>
+            <input id="input-2" type="text" placeholder="Enter a valid address"><br>
+            <textarea name="" id="" rows="6" cols="42"></textarea><br>
+            <p id="input-3">Submit</p>
+        </div>
+        <div class="map-image">
+            <img src="https://www.w3schools.com/w3images/map.jpg" alt="" >
+        </div>
+    </div>
+
+    <!--Map-->
+    <div class="footer-section">
+        <div class="icons">
+            <i class="fa-brands fa-facebook" style="color: white;"></i>
+            <i class="fa-brands fa-instagram" style="color: white;"></i>
+            <i class="fa-brands fa-twitter" style="color:white;"></i>
+            <i class="fa-brands fa-linkedin" style="color: white;"></i>
+            <i class="fa-brands fa-youtube" style="color: white;"></i>
+        </div>
+        <div class="refer">
+            <ul class="unorder" type="none">
+                <li>Home</li>
+                <li>Projects</li>
+                <li>About</li>
+                <li>Contact Us</li>
+                <li>Our Team</li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p><span style="font-weight: bold; font-size: 18px;">Copyright &copy;2024; Designed by</span> DEEKSHITH </p>
+        </div>
+    </div>
+     <br><br><br><br><br>
+</body>
+</html>
